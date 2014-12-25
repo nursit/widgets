@@ -1,0 +1,20 @@
+.widget-edition {
+	position: relative;
+}
+.widget-edition>.boutons {
+	display: none;
+	position: absolute;
+	bottom:0;
+	right: 0;
+}
+.widget-edition:hover>.boutons {
+	display: block;
+}
+
+.widget-off>:first-child {
+	opacity: 0.5;
+}
+.boutons.administrerwidgets {
+	text-align: right;
+	padding: 10px 0;
+}

@@ -10,23 +10,25 @@ if (_request('var_mode')=='widgets'){
 /**
  * Generer affichage des widgets d'un groupe avec boutons d'admin si besoin
  *
- * #AFFICHE_WIDGETS_ASIDE
- * #AFFICHE_WIDGETS_EXTRA
+ * #WIDGETS_ASIDE
+ * #WIDGETS_EXTRA
  *
  * @param object $p
  * @return object
  */
-function balise_AFFICHE_WIDGETS__dist($p) {
+function balise_WIDGETS__dist($p) {
+
 	$nom = $p->nom_champ;
-	if ($nom === 'AFFICHE_WIDGETS_') {
-		$msg = array('zbug_balise_sans_argument', array('balise' => ' AFFICHE_WIDGETS_'));
+	if ($nom === 'WIDGETS_') {
+		$msg = array('zbug_balise_sans_argument', array('balise' => ' WIDGETS_'));
 		erreur_squelette($msg, $p);
 		$p->interdire_scripts = false;
 		return $p;
 	}
 
 	$groupe = strtolower($nom);
-	$groupe = substr($groupe,strlen('AFFICHE_WIDGETS_'));
+	$groupe = substr($groupe,strlen('WIDGETS_'));
+
 
 	$code = "
 	include_spip(\'inc/widgets\');

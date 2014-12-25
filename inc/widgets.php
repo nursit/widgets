@@ -14,6 +14,10 @@ if (!defined("_ECRIRE_INC_VERSION")) return;
 
 /**
  * Afficher les widgets pour le groupe concerne
+ *
+ * @param string $groupe
+ * @param string|array $env
+ * @return string
  */
 function widgets_affiche($groupe,$env){
 
@@ -53,6 +57,13 @@ function widgets_affiche($groupe,$env){
 
 /**
  * Ajouter les boutons d'edition du widget en mode edition
+ *
+ * @param string $bloc
+ * @param bool $actif
+ * @param string $texte
+ * @param string $groupe
+ * @param string $idconfig
+ * @return string
  */
 function widgets_edition($bloc,$actif,$texte,$groupe,$idconfig){
 	$class = "widget-edition " . ($actif?"widget-on":"widget-off");
@@ -86,9 +97,13 @@ function widgets_edition($bloc,$actif,$texte,$groupe,$idconfig){
 
 /**
  * Afficher les boutons d'admin du groupe
+ *
+ * @param string $groupe
+ * @param string|array $env
+ * @return string
  */
 function widgets_boutons_admin($groupe,$env){
-	$idconfig = fo_blocs_idconfig($groupe,$env);
+	$idconfig = widgets_idconfig($groupe,$env);
 	$edit = (_request('var_mode')=='widgets'?true:false);
 	if ($edit){
 		include_spip('inc/autoriser');
@@ -109,11 +124,18 @@ function widgets_boutons_admin($groupe,$env){
 		$edit?_T('widgets:bouton_widgets_fin_editer'):_T('widgets:bouton_widgets_editer'),
 		$edit?self():parametre_url(self(),'var_mode','widgets'),'btn-small ');
 
+	lire_fichier(find_in_path("css/widgets.css"),$css);
+	$boutons .= "<style>$css</style>";
+
 	return $boutons;
 }
 
 /**
  * Calculer l'id config auto des widgets : type de page, composition, secteur
+ *
+ * @param string $groupe
+ * @param string|array $env
+ * @return string
  */
 function widgets_idconfig($groupe,$env){
 	if (is_string($env))
@@ -135,6 +157,10 @@ function widgets_idconfig($groupe,$env){
 /**
  * Recuperer les widgets actifs d'une config
  * avec fallback article => rubrique => sommaire
+ *
+ * @param string $groupe
+ * @param string|array $config
+ * @return array
  */
 function widgets_actifs($groupe,$config) {
 	if (!function_exists('lire_config'))
@@ -173,6 +199,9 @@ function widgets_actifs($groupe,$config) {
 
 /**
  * Trouver tous les widgets dispos pour un groupe
+ *
+ * @param string $groupe
+ * @return array
  */
 function widgets_dispos($groupe) {
 	$liste = array();

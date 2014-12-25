@@ -32,7 +32,7 @@ function action_instituer_widget_dist($arg=null) {
 		}
 		else {
 
-			$blocs = fo_blocs_actifs($groupe,$idconfig);
+			$blocs = widgets_actifs($groupe,$idconfig);
 
 			if ($bloc){
 				// ajouter le bloc dans la liste si pas encore mentionne

@@ -1,0 +1,17 @@
+<paquet
+	prefix="widgets"
+	categorie="outil"
+	version="1.0.0"
+	etat="test"
+	compatibilite="[3.0.0;3.0.*]"
+	logo="widgets-32.png"
+	documentation=""
+>
+
+	<nom>Widgets</nom>
+
+	<auteur lien='http://nursit.com'>Cédric</auteur>
+
+	<licence>GNU/GPL</licence>
+
+</paquet>

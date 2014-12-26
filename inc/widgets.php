@@ -73,13 +73,13 @@ function widgets_edition($bloc,$actif,$texte,$groupe,$idconfig){
 	$boutons = "";
 	if ($actif) {
 		$boutons .= $bouton_action(_T('widgets:bouton_widget_first'),
-			generer_action_auteur('instituer_widget',"first/$bloc/$groupe/$idconfig",$redirect),'btn-small btn-first');
+			generer_action_auteur('instituer_widget',"first/$bloc/$groupe/$idconfig",$redirect),'btn-small btn-first','',_T('widgets:bouton_widget_first_title'));
 		$boutons .= $bouton_action(_T('widgets:bouton_widget_up'),
-			generer_action_auteur('instituer_widget',"up/$bloc/$groupe/$idconfig",$redirect),'btn-small btn-up');
+			generer_action_auteur('instituer_widget',"up/$bloc/$groupe/$idconfig",$redirect),'btn-small btn-up','',_T('widgets:bouton_widget_up_title'));
 		$boutons .= $bouton_action(_T('widgets:bouton_widget_down'),
-			generer_action_auteur('instituer_widget',"down/$bloc/$groupe/$idconfig",$redirect),'btn-small btn-down');
+			generer_action_auteur('instituer_widget',"down/$bloc/$groupe/$idconfig",$redirect),'btn-small btn-down','',_T('widgets:bouton_widget_down_title'));
 		$boutons .= $bouton_action(_T('widgets:bouton_widget_last'),
-			generer_action_auteur('instituer_widget',"last/$bloc/$groupe/$idconfig",$redirect),'btn-small btn-last');
+			generer_action_auteur('instituer_widget',"last/$bloc/$groupe/$idconfig",$redirect),'btn-small btn-last','',_T('widgets:bouton_widget_last_title'));
 	}
 	$boutons .= $bouton_action(
 		$actif?_T('widgets:bouton_widgets_desactiver'):_T('widgets:bouton_widget_activer'),

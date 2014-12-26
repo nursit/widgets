@@ -1,4 +1,13 @@
 <?php
+/**
+ * Fichier options
+ *
+ * @plugin     Widgets
+ * @copyright  2014
+ * @author     Cédric
+ * @licence    GNU/GPL
+ * @package    SPIP\Widgets\options
+ */
 
 if (!defined("_ECRIRE_INC_VERSION")) return;
 

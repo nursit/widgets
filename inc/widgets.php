@@ -44,6 +44,10 @@ function widgets_affiche($groupe,$env){
 
 	foreach($blocs as $bloc=>$actif){
 		if ($edit OR $actif) {
+			if (_request('var_mode') AND !trouver_fond("$groupe/widgets/$bloc")){
+				$instituer_widget = charger_fonction("instituer_widget","action");
+				$instituer_widget("off/$bloc/$groupe/$idconfig");
+			}
 			$texte = recuperer_fond("$groupe/widgets/$bloc",$contexte);
 			if ($edit){
 				$texte = widgets_edition($bloc,$actif,$texte,$groupe,$idconfig);

@@ -4,7 +4,7 @@
  *
  * @plugin     Widgets
  * @copyright  2014
- * @author     Cédric
+ * @author     Cï¿½dric
  * @licence    GNU/GPL
  * @package    SPIP\Widgets\action
  */
@@ -89,7 +89,7 @@ function widgets_edition($bloc,$actif,$texte,$groupe,$idconfig){
 			generer_action_auteur('instituer_widget',"last/$bloc/$groupe/$idconfig",$redirect),'btn-small btn-last','',_T('widgets:bouton_widget_last_title'));
 	}
 	$boutons .= $bouton_action(
-		$actif?_T('widgets:bouton_widgets_desactiver'):_T('widgets:bouton_widget_activer'),
+		$actif?_T('widgets:bouton_widgets_desactiver')." ".$bloc:_T('widgets:bouton_widget_activer')." ".$bloc,
 			generer_action_auteur('instituer_widget',($actif?"off":"on")."/$bloc/$groupe/$idconfig",$redirect),'btn-small '.($actif?'btn-warning':'btn-info'));
 
 	$boutons = "<div class='boutons'>$boutons</div>";

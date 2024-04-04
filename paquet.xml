@@ -3,7 +3,7 @@
 	categorie="outil"
 	version="1.0.3"
 	etat="test"
-	compatibilite="[3.0.0;3.2.*]"
+	compatibilite="[3.0.0;4.2.*]"
 	logo="widgets-32.png"
 	documentation=""
 >

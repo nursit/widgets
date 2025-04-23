@@ -2,7 +2,7 @@
 
 if (!defined('_ECRIRE_INC_VERSION')) return;
 
-$GLOBALS[$GLOBALS['idx_lang']] = array(
+return [
 
 	// B
 	'bouton_widgets_editer' => 'Modifier l\'affichage',
@@ -16,9 +16,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'bouton_widget_up_title' => 'Monter',
 	'bouton_widget_down' => '<i class="icon-chevron-down"></i>',
 	'bouton_widget_down_title' => 'Descendre',
-  'bouton_widget_last' => '<i class="icon-arrow-down"></i>',
-  'bouton_widget_last_title' => 'En dernier',
+	'bouton_widget_last' => '<i class="icon-arrow-down"></i>',
+	'bouton_widget_last_title' => 'En dernier',
 
 	'label_confirm_reinit' => 'Reinitialiser la configuration de cette colonne ?',
-);
-?>
+];
